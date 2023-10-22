@@ -3,6 +3,7 @@
 /* ------------------ */
 
 :root {
+        /* colors */
     --clr-navy: 5 59 80;
     --clr-blue: 23 107 145;
     --clr-teal: 100 204 197;
@@ -10,6 +11,20 @@
     --clr-white: 255 255 255;
     --clr-black: 0 0 0;
 
+    /* font-sizes */
+    --fs-900: 9.375rem;
+    --fs-800: 6.25rem;
+    --fs-700: 3.5rem;
+    --fs-600: 2rem;
+    --fs-500: 1.175rem;
+    --fs-400: 1.125rem;
+    --fs-300: 1rem;
+    --fs-100: 0.875rem;
+
+    /* typography */
+    --ff-sans-normal: "Titillium", sans-serif;
+    --ff-sans-bold: "Titillium bold", sans-serif;
+    --ff-sans-italic: "Titillium italic", sans-serif;
 
 }
 
@@ -39,8 +54,25 @@ picture {
     margin: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: 400;
+}
+
+
+
+
 /* set up the body */
 body {
+    font-family: var(--ff-sans-normal);
+    font-size: var(--fs-400);
+    color: rgb( var(--clr-white) );
+    background-color: rgb( var(--clr-black) );
     line-height: 1.5;
     min-height: 100vh;
 }
@@ -87,6 +119,11 @@ select {
     gap: var(--gap, 1rem);
 }
 
+.flow > *:where(:not(:first-child)) {
+    margin-top: var(--flow-space, 1rem);
+    outline: 1px solid red;
+}
+
 .container {
     padding-inline: 2em;
     margin-inline: auto;
@@ -121,5 +158,41 @@ select {
 .text-white { color: rgb( var(--clr-white) ) ;}
 .text-black { color: rgb( var(--clr-black) ) ;}
 
+/* typography */
 
+.ff-sans-italic { font-family: var(--ff-sans-italic); }
+.ff-sans-normal { font-family: var(--ff-sans-normal); }
+.ff-sans-bold { font-family: var(--ff-sans-bold); }
 
+.letter-spacing-1 { letter-spacing: 4.75px;}
+.letter-spacing-2 { letter-spacing: 2.7px;}
+.letter-spacing-3 { letter-spacing: 2.35px;}
+
+.fs-900 { font-size: var(--fs-900); }
+.fs-800 { font-size: var(--fs-800); }
+.fs-700 { font-size: var(--fs-700); }
+.fs-600 { font-size: var(--fs-600); }
+.fs-500 { font-size: var(--fs-500); }
+.fs-400 { font-size: var(--fs-400); }
+.fs-300 { font-size: var(--fs-300); }
+.fs-200 { font-size: var(--fs-200); }
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+    line-height: 1.1;
+}
+
+.numbered-title {
+    font-family: var(--ff-sans-bold);
+    font-size: var(--fs-500 );
+    text-transform: uppercase;
+    letter-spacing: 4.72px;
+}
+
+.numbered-title span {
+    margin-right: .5em;
+    font-weight: 700;
+    color: rgb( var(--clr-white) / .25 );
+}
