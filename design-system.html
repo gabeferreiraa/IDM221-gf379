@@ -65,7 +65,7 @@
             <section id="typography" style="margin: 4rem 0">
                 <h2> <span>02 </span>Typography</h2>
                     <div class="flex">
-                        <div class="" style="flex-basis: 100%;">
+                        <div class="flow" style="flex-basis: 100%;">
                             <div>
                                 <p class="text-white"> Heading 1 - Titillium Regular - 150px</p>
                                 <p class="fs-900 ff-sans-bold uppercase">Hello world</p>
@@ -99,20 +99,38 @@
                 <h2 class="numbered-title"><span>03</span>Interactive elements</h2>
 
                 <!-- navigation -->
-                <div></div>
+                <div>
+                    <nav>
+                        <ul class="primary-navigation underline-indicators flex">
+                            <li class="active"><a class="uppercase text-white letter-spacing-2" href="#"><span>01</span>Active</a></li>
+                            <li><a class="uppercase text-white letter-spacing-2" href="#"><span>02</span>Hovered</a></li>
+                            <li><a class="uppercase text-white letter-spacing-2" href="#"><span>03</span>Idle</a></li>
+                        </ul>
+
+                    </nav>
+
+                </div>
 
                 <div class="flex">
-                    <div>
+                    <div style="margin-top: 5rem;">
                         <!-- explore button --> 
                         <a href="#" class="large-button uppercase ff-sans fs-600 text-black bg-white"> Explore</a>
                     </div>
 
-                    <div style="margin-bottom: 50vh;">
+                    <div class="flow" style="margin-bottom: 50vh;" --flow-space: 4rem>
                         <!-- Tabs --> 
-
+                        <div class=" tab-list underline-indicators flex">
+                            <button aria-selected="true" class="uppercase ff-sans-normal text-teal bg-navy letter-spacing-2">Moon</button>
+                            <button aria-selected="false" class="uppercase ff-sans-normal text-teal bg-navy letter-spacing-2">Mars</button>
+                            <button aria-selected="false" class="uppercase ff-sans-normal text-teal bg-navy letter-spacing-2">Europa</button>
+                        </div>
 
                         <!-- Dots --> 
-
+                        <div class= "dot-indicators flex">
+                            <button aria-selected="true">Slide title</button>
+                            <button aria-selected="false"></button>
+                            <button aria-selected="false">Europa</button>
+                        </div>
 
                         <!-- Numbers -->  
                     </div>
