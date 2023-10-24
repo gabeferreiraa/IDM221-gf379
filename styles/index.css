@@ -12,19 +12,41 @@
     --clr-black: 0 0 0;
 
     /* font-sizes */
-    --fs-900: 9.375rem;
-    --fs-800: 6.25rem;
-    --fs-700: 3.5rem;
-    --fs-600: 2rem;
-    --fs-500: 1.175rem;
-    --fs-400: 1.125rem;
+    --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
+    --fs-800: 3.5rem;
+    --fs-700: 1.5rem;
+    --fs-600: 1rem;
+    --fs-500: 1.75rem;
+    --fs-400: 0.9375rem;
     --fs-300: 1rem;
-    --fs-100: 0.875rem;
+    --fs-200: 0.875rem;
 
     /* typography */
     --ff-sans-normal: "Titillium", sans-serif;
     --ff-sans-bold: "Titillium bold", sans-serif;
     --ff-sans-italic: "Titillium italic", sans-serif;
+}
+
+@media (min-width: 35em) {
+    :root {
+       /* font-sizes */
+
+       --fs-800: 5rem;
+       --fs-700: 2.5rem;
+       --fs-600: 1.5rem;
+       --fs-400: 1rem;
+    }
+}
+
+@media (min-width: 45em) {
+    :root {
+       /* font-sizes */
+    --fs-800: 6.25rem;
+    --fs-700: 3.5rem;
+    --fs-600: 2rem;
+    --fs-400: 1.125rem;
+    }
+
 
 }
 
@@ -75,6 +97,9 @@ body {
     background-color: rgb( var(--clr-black) );
     line-height: 1.5;
     min-height: 100vh;
+
+    display: grid;
+    grid-template-rows: min-content 1fr;
 }
 
 /* make images easier to work with */
@@ -119,6 +144,10 @@ select {
     gap: var(--gap, 1rem);
 }
 
+.d-block {
+    display: block;
+}
+
 .flow > *:where(:not(:first-child)) {
     margin-top: var(--flow-space, 1rem);
 }
@@ -128,6 +157,44 @@ select {
     margin-inline: auto;
     max-width: 80rem;
 }
+
+.grid-container {
+    text-align: center;
+    border: 5px solid limegreen;
+    display: grid;
+    place-items: center;
+    row-gap: 10%;
+    padding-inline: 1rem;
+}
+
+.grid-container * {
+    max-width: 50ch;
+}
+
+@media (min-width: 45em) {
+    .grid-container {
+        text-align: left;
+        column-gap: var(--container-gap, 2rem);
+        grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(1rem, 1fr);
+    }
+
+    .grid-container > *:first-child {
+        grid-column: 2;
+        outline: 1px solid red;
+    }
+    
+    .grid-container > *:last-child {
+        grid-column: 3;
+        outline: 1px solid yellow;
+    }
+
+    .grid-container--home {
+        padding-bottom: max(6rem, 20vh);
+        align-items: end;
+    }
+}
+
+
 
 .sr-only {
     position: absolute;
@@ -202,9 +269,10 @@ select {
 /* ------------------ */
 
 .large-button {
-    display: grid;
+    font-size: 2rem;
+    display: inline-grid;
     position: relative;
-    /* z-index: 1; */
+    z-index: 1;
     place-items: center;
     padding: 0 2em;
     border-radius: 50%;
@@ -230,11 +298,54 @@ select {
 }
 
 .primary-navigation {
-    --gap: 8rem;
     --underline-gap: 2rem;
     list-style: none;
     padding: 0;
     margin: 0;
+    background: rgb( var(--clr-black) / .95 );
+    /* backdrop-filter: blur(1.5rem); */
+}
+
+@supports (backdrop-filter: blur(1rem)) {
+    .primary-navigation {
+        background: rgb( var(--clr-white) /.05 );
+        backdrop-filter: blur(1.5rem);
+    }
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+@media (max-width: 35rem) {
+    .primary-navigation {
+        --underline-gap: .5rem;
+        position: fixed;
+        z-index: 1000;
+        inset: 0 0 0 30%;
+        list-style: none;
+        padding: min(20rem,15vh) 2rem;
+        margin: 0;
+        flex-direction: column;
+    }
+    
+    /* .primary-navigation.underline-indicators > .active{
+        border: 0;
+    } */
+
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        z-index: 2000;
+        right: 1rem;
+        top: 2rem;
+        background: transparent;
+        background-image: url(/images/burger-menu-right-svgrepo-com-white.svg); 
+        background-repeat: no-repeat;
+        width: 1.5rem;
+        aspect-ratio: 1;
+        border: 0;
+    }
 }
 
 .primary-navigation a {
@@ -287,3 +398,28 @@ select {
     background-color: rgba( var(--clr-white) /1 );
 }
 
+
+/* ------------------ */
+/* Page specific      */
+/* ------------------ */
+body {
+    background-size: cover;
+    background-position: bottom center;
+}
+/* home */
+
+.home {
+    background-image: url(/images/home-background-mobile.jpg);
+}
+
+@media (min-width: 35rem) {
+    .home {
+        background-image: url(/images/home-background-tablet.jpg);
+    }
+}
+
+@media (min-width: 45rem) {
+    .home {
+        background-image: url(/images/home-background-desktop.jpg);
+    }
+}
