@@ -1,3 +1,45 @@
+/* Font imports */
+
+@font-face {
+    font-family: "evander";
+    src: url("/fonts/evander-extralightitalic-webfont.woff2") format('woff2');
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: "evander";
+    src: url("/fonts/evander-extralight-webfont.woff2") format('woff2');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: "evander";
+    src: url("/fonts/evander-extrabolditalic-webfont.woff2") format('woff2');
+    font-weight: bold;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: "evander";
+    src: url("/fonts/evander-extrabold-webfont.woff2") format('woff2');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: "phlatt_grotesk";
+    src: url("/fonts/phlattgrotesk-regular-webfont.woff2") format('woff2');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 /* ------------------ */
 /* Custom properties  */
 /* ------------------ */
@@ -21,16 +63,18 @@
     --fs-300: 1rem;
     --fs-200: 0.875rem;
 
-    /* typography */
-    --ff-sans-normal: "Titillium", sans-serif;
-    --ff-sans-bold: "Titillium bold", sans-serif;
-    --ff-sans-italic: "Titillium italic", sans-serif;
+    /* font-families */
+    --ff-sans-normal: "Evander", sans-serif;
+    --ff-sans-normal-italic: "Evander", sans-serif;
+    --ff-sans-bold: "Evander", sans-serif;
+    --ff-sans-bold-italic: "Evander", sans-serif;
+    --ff-serif-regular: "phlatt_grotesk", serif;
 }
+
 
 @media (min-width: 35em) {
     :root {
        /* font-sizes */
-
        --fs-800: 5rem;
        --fs-700: 2.5rem;
        --fs-600: 1.5rem;
@@ -91,7 +135,7 @@ p {
 
 /* set up the body */
 body {
-    font-family: var(--ff-sans-normal);
+    font-family: var(--ff-serif-regular);
     font-size: var(--fs-400);
     color: rgb( var(--clr-white) );
     background-color: rgb( var(--clr-black) );
@@ -228,9 +272,11 @@ select {
 
 /* typography */
 
-.ff-sans-italic { font-family: var(--ff-sans-italic); }
+.ff-sans-normal-italic { font-family: var(--ff-sans-normal-italic); }
 .ff-sans-normal { font-family: var(--ff-sans-normal); }
 .ff-sans-bold { font-family: var(--ff-sans-bold); }
+.ff-sans-bold-italic { font-family: var(--ff-sans-bold-italic); }
+.ff-serif-normal {font-family: var(--ff-serif-regular); }
 
 .letter-spacing-1 { letter-spacing: 4.75px;}
 .letter-spacing-2 { letter-spacing: 2.7px;}
