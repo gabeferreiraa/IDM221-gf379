@@ -63,7 +63,7 @@
   --ff-sans-normal-italic: "Evander", sans-serif;
   --ff-sans-bold: "Evander", sans-serif;
   --ff-sans-bold-italic: "Evander", sans-serif;
-  --ff-serif-regular: "phlatt_grotesk", serif;
+  --ff-serif: "phlatt_grotesk", serif;
 }
 
 @media (min-width: 35em) {
@@ -124,7 +124,7 @@ p {
 
 /* set up the body */
 body {
-  font-family: var(--ff-serif-regular);
+  font-family: var(--ff-serif);
   font-size: var(--fs-400);
   color: rgb(var(--clr-white));
   background-color: rgb(var(--clr-black));
@@ -297,8 +297,8 @@ select {
 .ff-sans-bold-italic {
   font-family: var(--ff-sans-bold-italic);
 }
-.ff-serif-regular {
-  font-family: var(--ff-serif-regular);
+.ff-serif {
+  font-family: var(--ff-serif);
 }
 
 .letter-spacing-1 {
@@ -360,7 +360,42 @@ select {
 /* Custom properties  */
 /* ------------------ */
 
-.large-button {
+.homepage-hero {
+  height: 80vh;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 6vw;
+  padding-right: 6vw;
+  display: flex;
+}
+
+.display-large {
+  color: rgb(var(--clr-teal));
+  margin-bottom: 48px;
+  font-family: evander, sans-serif;
+  font-size: 8vw;
+  font-weight: 600;
+}
+
+.display-large.home-into {
+  text-align: center;
+  white-space: normal;
+  align-self: center;
+}
+
+.display-large-alt_wrap {
+  letter-spacing: 0;
+  padding-right: 0.35em;
+}
+
+.h1-block {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+/* .large-button {
   font-size: 2rem;
   display: inline-grid;
   position: relative;
@@ -389,9 +424,14 @@ select {
 .large-button:focus::after {
   opacity: 1;
   transform: scale(1.5);
-}
+} */
 
 /* primary-header */
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+}
 
 .logo {
   margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
@@ -408,8 +448,9 @@ select {
   list-style: none;
   padding: 0;
   margin: 0;
-  background: rgb(var(--clr-black) / 0.95);
-  backdrop-filter: blur(1.5rem);
+  font-weight: 700;
+  /* background: rgb(var(--clr-black) / 0.95); */
+  /* backdrop-filter: blur(1.5rem); */
 }
 
 .primary-navigation a {
@@ -425,12 +466,12 @@ select {
   display: none;
 }
 
-@supports (backdrop-filter: blur(1rem)) {
+/* @supports (backdrop-filter: blur(1rem)) {
   .primary-navigation {
     background: rgb(var(--clr-white) / 0.05);
     backdrop-filter: blur(1.5rem);
   }
-}
+} */
 
 @media (max-width: 35rem) {
   .primary-navigation {
@@ -501,7 +542,7 @@ select {
     display: block;
     position: absolute;
     height: 1px;
-    background: red;
+    background: 0;
     width: 10%;
   }
 
@@ -559,9 +600,9 @@ body {
 }
 /* home */
 
-.home {
+/* .home {
   background-image: url(/images/home-background-mobile.jpg);
-}
+} */
 
 @media (min-width: 35rem) {
   .home {
