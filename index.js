@@ -1,6 +1,7 @@
-const hamburgermenu = document.querySelector(".hamburger-menu");
+const hamburger = document.querySelector(".hamburger");
 const headermenu = document.querySelector(".header__menu");
 
-hamburgermenu.addEventListener("click", () => {
-  headermenu.classList.toggle("mobile-menu");
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  headermenu.classList.toggle("active");
 });

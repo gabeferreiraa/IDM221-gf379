@@ -1,0 +1,24 @@
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 6rem;
+  padding: 2rem 1.5rem 0;
+}
+
+.contact-content p {
+  padding-top: 2rem;
+}
+
+.contact-text {
+  padding: 1.5rem 1rem;
+}
+.contact-text p {
+  line-height: 2rem;
+  max-width: 300px;
+}
+
+.contact-text h1 {
+  line-height: 4rem;
+  max-width: 350px;
+}
