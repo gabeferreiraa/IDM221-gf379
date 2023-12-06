@@ -294,12 +294,6 @@ body {
 /* Mobile Header */
 
 @media screen and (max-width: 800px) {
-  html,
-  body {
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
   .header__nav .hamburger {
     display: block;
     /* position: fixed; */
@@ -389,29 +383,30 @@ body {
   row-gap: 2rem;
 }
 
-/* .portfolio-links {
-  margin-top: 1rem;
-} */
+.portfolio-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
 
 .portfolio-link-1,
 .portfolio-link-2,
 .portfolio-link-3 {
   display: block;
-  background-color: white;
+  height: 200px;
+  background-color: black;
   padding: 2rem 0.5rem;
-  justify-content: space-between;
-  gap: 2rem;
+  align-items: center;
+  text-align: center;
 }
 
 /* ------------------ */
 /* Page specific      */
 /* ------------------ */
-body {
-  background-size: cover;
-  background-position: bottom center;
-}
 
 .home-format {
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
