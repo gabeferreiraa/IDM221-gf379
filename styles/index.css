@@ -396,3 +396,10 @@ body {
 .portfolio-link-3 {
   height: 300px;
 } */
+
+.portfolio-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
