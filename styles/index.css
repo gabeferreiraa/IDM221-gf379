@@ -381,22 +381,6 @@ body {
   height: 300px;
 }
 
-/* ------------------ */
-/* Page specific      */
-/* ------------------ */
-
-/* .portfolio-link-1 {
-  height: 300px;
-}
-
-.portfolio-link-2 {
-  height: 300px;
-}
-
-.portfolio-link-3 {
-  height: 300px;
-} */
-
 .portfolio-text {
   display: flex;
   flex-direction: column;
