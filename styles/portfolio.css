@@ -15,7 +15,7 @@
   flex-direction: column;
   flex-wrap: nowrap;
   padding: 0rem 0 6rem 0;
-  line-height: 1rem;
+  line-height: 2rem;
   max-width: 400px;
 }
 
@@ -24,7 +24,7 @@
   flex-direction: column;
   flex-wrap: nowrap;
   padding: 3rem 0 6rem 0;
-  line-height: 1.25rem;
+  line-height: 2rem;
   max-width: 400px;
 }
 
@@ -33,7 +33,7 @@
   flex-direction: column;
   flex-wrap: nowrap;
   padding: 3rem 0 6rem 0;
-  line-height: 1.25rem;
+  line-height: 2rem;
   max-width: 400px;
 }
 
@@ -42,6 +42,15 @@
 } */
 
 .portfolio-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio-images img {
   margin: auto;
   padding: 2rem 0 1rem 0;
+  width: 450px;
+  height: 300px;
+  object-fit: scale-down;
 }

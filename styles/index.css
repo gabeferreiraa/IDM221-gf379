@@ -103,18 +103,18 @@ p {
 }
 
 /* set up the body */
+html,
+body {
+  overflow-x: hidden;
+  position: relative;
+}
+
 body {
   font-family: var(--ff-serif);
   font-size: var(--fs-400);
   color: rgb(var(--clr-white));
   background-color: rgb(var(--clr-black));
   line-height: 1.5;
-}
-
-html,
-body {
-  max-width: 100%;
-  overflow-x: hidden;
 }
 
 /* .sr-only {
@@ -295,15 +295,16 @@ body {
 
 @media screen and (max-width: 800px) {
   .header__nav .hamburger {
-    display: block;
+    display: flex;
     /* position: fixed; */
     z-index: 1;
   }
 
   .header__menu {
+    overflow-x: hidden;
     top: 0;
     left: 0;
-    position: absolute;
+    position: relative;
     background-color: black;
     display: flex;
     justify-content: center;
@@ -311,7 +312,6 @@ body {
     width: 100%;
     height: 100dvh;
     transform: translateX(100%);
-    overflow-x: 0;
     z-index: 1;
     transition: 0.5s;
   }
@@ -327,7 +327,6 @@ body {
 
   .header__nav .header__menu ul li {
     margin: 25px 0;
-    font-size: 600;
   }
 }
 
@@ -340,13 +339,13 @@ body {
   flex-direction: column;
   position: absolute;
   top: 200px;
-  padding: 4rem 2rem;
+  padding: 4rem 1rem;
+  overflow-x: hidden;
 }
 
 .hero {
-  display: block;
+  display: flex;
   background-color: rgb(var(--clr-blue));
-  /* position: absolute; */
   padding: 4rem 0rem 4rem 2rem;
   text-align: left;
 }
@@ -354,33 +353,13 @@ body {
 .hero-maintext {
   display: flex;
   flex-direction: column;
-  margin: 2rem;
-  /* justify-content: space-between; */
+  margin: 2rem 2rem 8rem 2rem;
 }
 .hero-maintext p {
   margin: 1rem;
   font-size: large;
   line-height: 1.75rem;
   text-wrap: pretty;
-}
-
-/* Footer Content */
-
-.footer-container {
-  display: block;
-  justify-content: flex-end;
-  width: 100vw;
-  padding: 1.25rem 3rem;
-  position: absolute;
-  bottom: 0px;
-  background-color: bg;
-}
-
-.footer-content {
-  display: block;
-  align-content: end;
-  text-align: end;
-  row-gap: 2rem;
 }
 
 .portfolio-links {
@@ -393,20 +372,27 @@ body {
 .portfolio-link-1,
 .portfolio-link-2,
 .portfolio-link-3 {
-  display: block;
-  height: 200px;
-  background-color: black;
+  display: inline-block;
   padding: 2rem 0.5rem;
   align-items: center;
   text-align: center;
+  cursor: pointer;
+  width: 445px;
+  height: 300px;
 }
 
 /* ------------------ */
 /* Page specific      */
 /* ------------------ */
 
-.home-format {
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
+/* .portfolio-link-1 {
+  height: 300px;
 }
+
+.portfolio-link-2 {
+  height: 300px;
+}
+
+.portfolio-link-3 {
+  height: 300px;
+} */
